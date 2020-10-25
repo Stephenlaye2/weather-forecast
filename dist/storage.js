@@ -1,10 +1,10 @@
-class Storage {
-  constructor() {
+const Storage = function() {
+  
     this.city;
     this.defaultCity = "London";
   }
 
-  getLocationData() {
+ Storage.prototype.getLocationData = function() {
     if (localStorage.getItem("city") === null) {
       this.city = this.defaultCity;
     } else {
@@ -15,8 +15,8 @@ class Storage {
     };
   }
 
-  setLocationData(city) {
+  Storage.prototype.setLocationData = function(city) {
     localStorage.setItem("city", city);
     // localStorage.setItem("city", this.defaultCity);
   }
-}
+

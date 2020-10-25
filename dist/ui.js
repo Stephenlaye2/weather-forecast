@@ -1,5 +1,5 @@
-class UI {
-  constructor() {
+const UI = function(){
+ 
     this.location = document.getElementById("w-location");
     this.desc = document.getElementById("w-desc");
     this.string = document.getElementById("w-string");
@@ -11,7 +11,7 @@ class UI {
     this.wind = document.getElementById("w-wind");
   }
 
-  paint(weather) {
+  UI.prototype.paint = function(weather) {
     this.location.textContent = weather.city + ", " + weather.country;
     this.desc.textContent = weather.description;
     this.string.textContent = `${(weather.temp - 273.15).toFixed(
@@ -27,4 +27,4 @@ class UI {
     ).toFixed(0)} degree celsius`;
     this.wind.textContent = `Wind Speed: ${weather.wind} mph`;
   }
-}
+
